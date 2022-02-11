@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 
 @Service
-public class Calculator {
+public class CalculatorService {
 
     public int calculate (IOperator operator, HashMap params) {
 
