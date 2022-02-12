@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pryzintul-calc-engine-deployment
+  namespace: default
+  labels:
+    name: pryzintul-calc-engine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: pryzintul-calc-engine
+  template:
+    metadata:
+      labels:
+        name: pryzintul-calc-engine
+    spec:
+      containers:
+        - name: pryzintul-calc-engine
+          image: pryzintul-calc-engine:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8090

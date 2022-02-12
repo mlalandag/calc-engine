@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pryzintul-calc-engine-configmap
+  namespace: default
+  labels:
+    name: pryzintul-calc-engine
+data:
+  application.yml: |-
+    logging:
+      level:
+        ROOT: INFO
+        com.pryzintul: DEBUG
+        org.apache.http: DEBUG
+        org.springframework.web: DEBUG
+    spring:
+      devtools:
+        restart:
+          enabled: true
+          additional-exclude: static/**
+        livereload:
+          enabled: false
+      jackson:
+        serialization:
+          indent-output: true
+    server:
+      port: 8090
+      servlet:
+        context-path: /calc-engine
+    springdoc:
+      swagger-ui:
+        operationsSorter: method
+    management:
+      endpoint:
+        health:
+          enabled: true
+        info:
+          enabled: true
+        restart:
+          enabled: true
+      endpoints:
+        web:
+          exposure:
+            include: health,info,restart

@@ -2,11 +2,11 @@
 
 set -ex
 
-cp ../build/libs/*.jar app.jar
+cp build/libs/*.jar target/app.jar
 
-version=$(echo ../build/libs/*.jar | awk -F\- '{print $2}' | awk -F\.jar '{print $1}')
+version=$(echo build/libs/*.jar | awk -F\- '{print $2}' | awk -F\.jar '{print $1}')
 
-docker build -t calc-engine -f Dockerfile .
+docker build -t pryzintul-calc-engine -f Dockerfile .
 
 #docker build -t $IMAGE -f Dockerfile .
 #
