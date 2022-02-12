@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: calc-engine
+  cloud:
+    kubernetes:
+      config:
+        namespace: default
+        sources:
+          - name: calc-engine-configmap
+      reload:
+        enabled: false
+        strategy: restart_context
