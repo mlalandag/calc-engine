@@ -30,6 +30,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-kubernetes-client-config', version: '2.1.0'
+	implementation group: 'org.antlr', name: 'antlr4-runtime', version: '4.9.3'
 }
 
 tasks.named('test') {

@@ -4,6 +4,6 @@ import java.util.HashMap;
 
 public interface IOperator {
 
-    public int calculate (HashMap params);
+    public int calculate (HashMap<String, Object> params);
 
 }
