@@ -27,7 +27,7 @@ public class CalculatorController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity calculate(@RequestBody CalculationDto calculationDto) {
         try {
-            Integer result = calculatorService.evaluate(calculationDto .expression);
+            Integer result = calculatorService.evaluate(calculationDto.expression);
             logger.info("Result = " + result);
             return new ResponseEntity(result, HttpStatus.OK);
         } catch (Exception e) {

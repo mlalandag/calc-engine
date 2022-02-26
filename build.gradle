@@ -22,6 +22,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'io.zeebe.spring', name: 'spring-zeebe', version: '1.0.0-rc1'
+	implementation group: 'io.zeebe', name: 'zeebe-client-java', version: '0.26.6'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.12'
 	compileOnly 'org.projectlombok:lombok'
