@@ -27,9 +27,9 @@ public class CalcEngineApplication {
 		SpringApplication.run(CalcEngineApplication.class, args);
 	}
 
-	@ZeebeWorker(type = "evaluate", name = "evaluate-worker")
+	@ZeebeWorker(type = "evaluate_expression_service", name = "evaluate-worker")
 	public void evaluate(final JobClient client, final ActivatedJob job) {
-		Integer result = calculatorService.evaluate(??);
+		Integer result = calculatorService.evaluate(job.getVariablesAsMap().get("expression").toString());
 		logger.info("Result = " + result);
 		client.newCompleteCommand(job.getKey()).send().join();
 	}
